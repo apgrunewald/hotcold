@@ -83,7 +83,6 @@ $('.new').click(function() {
 
 
   numRand = Math.floor((Math.random() * 101) + 1); //Random number generator at "new game" button click
-  alert(numRand);
 
 });
 //-----------------------------------------------New Game End
