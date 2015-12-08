@@ -62,9 +62,16 @@ $('#guessButton').click(function() {
 
 
   //---------------------------------------------Within 10 Begin
-  else if (Math.abs(numRand - getNum) >= 1) {
+  else if (Math.abs(numRand - getNum) > 10) {
     $('#guessList').append('<li>' + $('input#userGuess').val() + '</li>');
     $('#feedback').text('very hot!');
+    $('input#userGuess').val(" ");
+  }
+  //---------------------------------------------Within 10 End
+  //---------------------------------------------Within 10 Begin
+  else if (Math.abs(numRand - getNum) >= 1) {
+    $('#guessList').append('<li>' + $('input#userGuess').val() + '</li>');
+    $('#feedback').text('wow,  you are so close! super hot!');
     $('input#userGuess').val(" ");
   }
   //---------------------------------------------Within 10 End
