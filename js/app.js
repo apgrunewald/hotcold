@@ -2,6 +2,7 @@
 $(document).ready(function(){
 
 var numRand = Math.floor((Math.random() * 101) + 1); //Random Number Generator at page load
+console.log(numRand);
 
 
 //-----------------------------------------------Guessing Number Begin
@@ -30,6 +31,7 @@ $('#guessButton').click(function() {
     $('#guessList').append('<li>' + $('input#userGuess').val() + '</li>');
     $('input#userGuess').val(" ");
     $('#feedback').text('ice cold!');
+    console.log("w/50");
   }
   //---------------------------------------------Within 50 End
 
@@ -39,6 +41,7 @@ $('#guessButton').click(function() {
     $('#guessList').append('<li>' + $('input#userGuess').val() + '</li>');
     $('#feedback').text('cold!');
     $('input#userGuess').val(" ");
+    console.log("w/40");
   }
   //---------------------------------------------Within 40 End 
 
@@ -48,6 +51,7 @@ $('#guessButton').click(function() {
     $('#guessList').append('<li>' + $('input#userGuess').val() + '</li>');
     $('#feedback').text('warm!');
     $('input#userGuess').val(" ");
+    console.log("w/30");
   }
   //---------------------------------------------Within 30 End
 
@@ -57,17 +61,27 @@ $('#guessButton').click(function() {
     $('#guessList').append('<li>' + $('input#userGuess').val() + '</li>');
     $('#feedback').text('hot!');
     $('input#userGuess').val(" ");
+    console.log("w/20");
   }
   //---------------------------------------------Within 20 End
 
 
   //---------------------------------------------Within 10 Begin
-  else if (Math.abs(numRand - getNum) >= 1) {
+  else if (Math.abs(numRand - getNum) > 10) {
     $('#guessList').append('<li>' + $('input#userGuess').val() + '</li>');
     $('#feedback').text('very hot!');
     $('input#userGuess').val(" ");
+    console.log("w/10");
   }
   //---------------------------------------------Within 10 End
+//---------------------------------------------Less Than 10 Begin
+  else if (Math.abs(numRand - getNum) < 10 && Math.abs(numRand - getNum) > 1) {
+    $('#guessList').append('<li>' + $('input#userGuess').val() + '</li>');
+    $('#feedback').text('wow,  you are so close! super hot!');
+    $('input#userGuess').val(" ");
+    console.log("Less Than 10");
+  }
+  //---------------------------------------------Less Than 10 End
 
     }
 
