@@ -75,7 +75,7 @@ $('#guessButton').click(function() {
   }
   //---------------------------------------------Within 10 End
 //---------------------------------------------Less Than 10 Begin
-  else if (Math.abs(numRand - getNum) < 10 && Math.abs(numRand - getNum) > 1) {
+  else if (Math.abs(numRand - getNum) <= 10 && Math.abs(numRand - getNum) >= 1) {
     $('#guessList').append('<li>' + $('input#userGuess').val() + '</li>');
     $('#feedback').text('wow,  you are so close! super hot!');
     $('input#userGuess').val(" ");
